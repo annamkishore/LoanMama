@@ -1,15 +1,11 @@
 <h1>Loan Mama</h1>
 
-<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+<form [formGroup]="loginForm" (keydown)="keyDownEvent($event)">
   <label>
-    Username
-    <input type="text" formControlName="username" required>
+    <input type="text" formControlName="username" required autofocus placeholder="Username"/>
   </label>
-
   <label>
-    Password
-    <input type="password" formControlName="password" required>
+    <input type="password" formControlName="password" required placeholder="Password">
   </label>
-
-  <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  <button type="button" (click)="onLogin()" [disabled]="!loginForm.valid">Login</button>
 </form>

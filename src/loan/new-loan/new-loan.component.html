@@ -1,3 +1,19 @@
-<p>
-  new-loan works!
-</p>
+<h1>Loan Mama</h1>
+
+<h2>New Loan</h2>
+
+<form [formGroup]="newLoanForm" (keydown)="keyDownEvent($event)">
+  <label>
+    First Name
+    <input type="text" formControlName="firstName" required autofocus placeholder="First name"/>
+  </label>
+  <label>
+    Last Name
+    <input type="text" formControlName="lastName" required placeholder="Last name">
+  </label>
+  <label>
+    Mobile
+    <input type="text" formControlName="mobile" required placeholder="mobile number">
+  </label>
+  <button type="button" (click)="onNewLoan()" [disabled]="!newLoanForm.valid">Create</button>
+</form>

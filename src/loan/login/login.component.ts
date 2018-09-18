@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
   }
@@ -20,5 +21,11 @@ export class LoginComponent implements OnInit {
   onLogin() {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
+  }
+
+  keyDownEvent(event) {
+    if (event.keyCode === 13 && this.loginForm.valid) {
+      this.onLogin();
+    }
   }
 }
