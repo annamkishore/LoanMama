@@ -15,5 +15,9 @@
     Mobile
     <input type="text" formControlName="mobile" required placeholder="mobile number">
   </label>
+  <label>
+    File upload
+    <input type="file" formControlName="aadharCard" required placeholder="Aadhar Card">
+  </label>
   <button type="button" (click)="onNewLoan()" [disabled]="!newLoanForm.valid">Create</button>
 </form>

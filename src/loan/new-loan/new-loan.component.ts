@@ -11,6 +11,7 @@ export class NewLoanComponent implements OnInit {
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     mobile: ['', Validators.required],
+    aadharCard: ['', Validators.required],
   });
 
   constructor(private fb: FormBuilder) {
